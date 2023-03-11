@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: slim-red
-    image: shantanoodesai/node-red-slim:latest
+    image: wutadmin/node-red-slim:latest
+    #container_name: slim-red
     env_file:
-      - .env.example
+      - .env.prod
     ports:
-      - "1880:1880"
+      - "1889:1880"
     

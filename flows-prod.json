@@ -1,0 +1,579 @@
+[
+    {
+        "id": "2336185423ce7003",
+        "type": "tab",
+        "label": "Main UI",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1b26de4a0563901a",
+        "type": "ui_text",
+        "z": "2336185423ce7003",
+        "group": "7c71c7b8.2c9fe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dectected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 1210,
+        "y": 180,
+        "wires": [],
+        "info": "## "
+    },
+    {
+        "id": "555745696ab7ec8f",
+        "type": "image",
+        "z": "2336185423ce7003",
+        "name": "",
+        "width": "167",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": true,
+        "outputs": 1,
+        "x": 680,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c18696d7758407b",
+        "type": "ui_webcam",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "7c71c7b8.2c9fe8",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "countdown": false,
+        "autoStart": true,
+        "hideCaptureButton": false,
+        "showImage": "2",
+        "mirror": true,
+        "format": "png",
+        "x": 460,
+        "y": 440,
+        "wires": [
+            [
+                "555745696ab7ec8f",
+                "ad139003a0da0fc8",
+                "ace1208f34592838"
+            ]
+        ],
+        "inputLabels": [
+            "Capture Trigger"
+        ],
+        "outputLabels": [
+            "Image Payload"
+        ]
+    },
+    {
+        "id": "7c822f2c16d78083",
+        "type": "ui_digital_clock",
+        "z": "2336185423ce7003",
+        "name": "Time",
+        "group": "db027e416847d093",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "x": 1210,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "4e0252b5c1b4dcd0",
+        "type": "trigger",
+        "z": "2336185423ce7003",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "date",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "stop",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1000,
+        "y": 100,
+        "wires": [
+            [
+                "7c822f2c16d78083"
+            ]
+        ]
+    },
+    {
+        "id": "c6f6bc0f654b1abf",
+        "type": "start-up-trigger",
+        "z": "2336185423ce7003",
+        "x": 620,
+        "y": 100,
+        "wires": [
+            [
+                "4e0252b5c1b4dcd0",
+                "556e34c5181215b9",
+                "37ae05c530ae96f6"
+            ]
+        ]
+    },
+    {
+        "id": "37ae05c530ae96f6",
+        "type": "delay",
+        "z": "2336185423ce7003",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 800,
+        "y": 300,
+        "wires": [
+            [
+                "8cd857ea293c044b"
+            ]
+        ]
+    },
+    {
+        "id": "8cd857ea293c044b",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Clear Payload",
+        "func": "msg.payload = \"\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 300,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "556e34c5181215b9",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Build Start Msg",
+        "func": "msg.payload = \"<font size=6>Click Camera</font>\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 180,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "e481ea14c81594fb",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Filter Null",
+        "func": "if (msg.payload == null ) {\n    msg.payload = \"<font size=7>Unknown</font>\";\n}\nelse {\n    msg.payload = \"<font size=9>\" + msg.payload + \"</font>\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 240,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "057fa8d6fcac943e",
+        "type": "debug",
+        "z": "2336185423ce7003",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "53d60d7906be9fbe",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Set Delay",
+        "func": "msg.delay = 15000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 300,
+        "wires": [
+            [
+                "37ae05c530ae96f6"
+            ]
+        ]
+    },
+    {
+        "id": "368de13869d6e9dd",
+        "type": "ui_list",
+        "z": "2336185423ce7003",
+        "group": "db027e416847d093",
+        "name": "listDisplay",
+        "order": 2,
+        "width": 4,
+        "height": "5",
+        "lineType": "two",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 1200,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "7a97cdc2bee59f0c",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Set List Msg",
+        "func": "//  Check for Unknown\nif (msg.payload == null) { msg.payload = \"Unknown\" }\n//  Check for Clear/Init\nif (!context.lstDisplay || msg.payload == 'clear') {\n    context.lstDisplay = [];\n    context.lstDisplay.length = 0;\n    context.lstDisplay.push(\"Past: Detections\");\n    msg.payload = \"\";\n    //return [msg];\n}\n//\ncontext.lstDisplay.push(msg.payload);\nmsg.payload = context.lstDisplay;\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n/*if (!context.lstDisplay) {\n    context.lstDisplay = [\"Past-Detections\"];\n}*/",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 500,
+        "wires": [
+            [
+                "368de13869d6e9dd",
+                "057fa8d6fcac943e"
+            ]
+        ]
+    },
+    {
+        "id": "cfcdfff242c4fe48",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Capture Image",
+        "props": [
+            {
+                "p": "capture",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "capture",
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "2c18696d7758407b"
+            ]
+        ]
+    },
+    {
+        "id": "b902693cd950f3c5",
+        "type": "ui_button",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "db027e416847d093",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Clear List",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "clear",
+        "payloadType": "str",
+        "topic": "payload",
+        "topicType": "msg",
+        "x": 1200,
+        "y": 380,
+        "wires": [
+            [
+                "7a97cdc2bee59f0c"
+            ]
+        ]
+    },
+    {
+        "id": "ad139003a0da0fc8",
+        "type": "mobilenet",
+        "z": "2336185423ce7003",
+        "name": "",
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "53d60d7906be9fbe",
+                "a47f4d841ee9ac9a",
+                "53995a20cda21da8"
+            ]
+        ]
+    },
+    {
+        "id": "53995a20cda21da8",
+        "type": "debug",
+        "z": "2336185423ce7003",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 940,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "a47f4d841ee9ac9a",
+        "type": "split",
+        "z": "2336185423ce7003",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "7a97cdc2bee59f0c",
+                "53995a20cda21da8"
+            ]
+        ]
+    },
+    {
+        "id": "2692d35c92873915",
+        "type": "kasa",
+        "z": "2336185423ce7003",
+        "name": "Office Lamp - HS103(US)",
+        "device": "192.168.1.104",
+        "interval": 60000,
+        "eventInterval": 15000,
+        "payload": "getQuickInfo",
+        "payloadType": "info",
+        "debug": false,
+        "x": 1170,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d80c117b9a9aec05",
+        "type": "split",
+        "z": "2336185423ce7003",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 770,
+        "y": 780,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "de04546c6b40774a",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "TranslateGesture",
+        "func": "if (msg.payload == null){ return msg; }\nif (msg.payload == true ){\n    if (context.kasaDevice) {\n        // Context Found Do Function\n        if(context.kasaDevice == true){ \n            context.kasaDevice = false\n            msg.payload = context.kasaDevice\n//            return msg;\n        } else {\n            context.kasaDevice = true\n            msg.payload = context.kasaDevice\n//            return msg;\n        }    \n    } else {\n        //  No Context Found Set\n        context.kasaDevice = msg.payload\n//        return msg;\n    }\n    return msg;    \n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 840,
+        "wires": [
+            [
+                "2692d35c92873915"
+            ]
+        ]
+    },
+    {
+        "id": "d10ece393d664093",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Switch Toggle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 630,
+        "y": 840,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "9466b51e0450c0b2",
+        "type": "debug",
+        "z": "2336185423ce7003",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 760,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "ace1208f34592838",
+        "type": "posenet",
+        "z": "2336185423ce7003",
+        "name": "",
+        "x": 560,
+        "y": 740,
+        "wires": [
+            [
+                "d80c117b9a9aec05",
+                "9466b51e0450c0b2"
+            ]
+        ]
+    },
+    {
+        "id": "7b788ae6bc622dc3",
+        "type": "ui_button",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "4c32eda946d15c83",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Office",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1190,
+        "y": 880,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "7c71c7b8.2c9fe8",
+        "type": "ui_group",
+        "name": "Identify Image",
+        "tab": "fbf5c038.d632b",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "db027e416847d093",
+        "type": "ui_group",
+        "name": "Time",
+        "tab": "fbf5c038.d632b",
+        "order": 2,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4c32eda946d15c83",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "fbf5c038.d632b",
+        "order": 1,
+        "disp": true,
+        "width": "2",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fbf5c038.d632b",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "light",
+        "order": 3,
+        "disabled": false,
+        "hidden": false
+    }
+]

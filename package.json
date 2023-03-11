@@ -1,17 +1,32 @@
 {
     "name": "node-red-slim-container",
-    "description": "A Slim Node-RED Docker Image running on Alpine Container",
-    "version": "1.1.0",
+    "description": "Custom Node-RED Docker Image running on Alpine Container",
+    "version": "1.5.0",
     "license": "GNU General Public License v3.0",
     "maintainers": [
-        "Shantanoo <Shan> Desai"
+        "Robert Burkhall"
     ],
     "repository": {
-        "url": "https://github.com/shantanoo-desai/node-red-slim"
+        "url": "https://localhost/node-red-slim"
     },
     "dependencies": {
-        "node-red": ">=2.2.0",
-        "node-red-dashboard": "*"
+        "semver":"7.3.8",
+        "uuid":"9.0.0",
+        "next":"canary",
+        "node-red": ">=3.0.0",
+        "@tensorflow/tfjs":"4.2.0",
+        "node-red-dashboard":"3.3.1",
+        "node-red-contrib-startup-trigger":"0.1.0",
+        "node-red-node-ui-list":"0.3.6",
+        "node-red-contrib-ui-digital-clock":"1.0.0",
+        "node-red-contrib-image-output":"0.6.3",
+        "node-red-contrib-tplink":"1.0.1",
+        "node-red-node-ui-webcam":"0.4.0",
+        "@tensorflow/tfjs":"4.2.0",
+        "node-red-contrib-mssql-plus":"0.10.2",
+        "node-red-contrib-tensorflow":"0.4.2",
+        "node-red-contrib-ui-level":"^0.1.46",
+        "node-red-contrib-ui-countdown-timer-switch":"1.4.1"
     },
     "scripts": {
         "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS --userDir=/data"

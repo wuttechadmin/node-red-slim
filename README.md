@@ -1,10 +1,10 @@
-# A Node-Red Slim Container with Alpine
+# A Node-Red Slim Container based from Node18-slim
 
 Current size is __374MB__ with basic Node-Red UI.
 
 ## Multi-Stage Docker
 
-Base and production ready images on `alpine:3.13`, Build Stage through: `nodered/node-red:2.2.2-minimal`
+Base and production ready images on `node18-slim`
 
 ## Usage
 
@@ -28,4 +28,9 @@ here the encrypted password is `password` as an example
 
 ```bash
 docker-compose build nodered-slim && docker-compose up
+```
+
+#### Build and Deploy to Swarm
+```bash
+docker-compose build nodered-slim && docker stack deploy --compose-file docker-compose.yml wuttech
 ```
