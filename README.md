@@ -50,6 +50,7 @@
 context.kasaDevice = 'Set.Device.IP'; 
 * Example
 * context.kasaDevice = '10.10.0.5'; 
+![alt text](https://github.com/wuttechadmin/node-red-slim/blob/main/images/kasa-device-setup.png?raw=true)
 
 #
 # Multi-Stage Docker | Ubuntu Based Image
