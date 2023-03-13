@@ -174,13 +174,13 @@
         "order": 2,
         "width": 0,
         "height": 0,
-        "name": "",
+        "name": "txbDetected",
         "label": "Dectected:",
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
-        "x": 1430,
-        "y": 620,
+        "x": 1450,
+        "y": 580,
         "wires": [],
         "info": "## "
     },
@@ -196,8 +196,8 @@
         "active": true,
         "pass": true,
         "outputs": 1,
-        "x": 680,
-        "y": 1280,
+        "x": 740,
+        "y": 1020,
         "wires": [
             []
         ]
@@ -206,7 +206,7 @@
         "id": "2c18696d7758407b",
         "type": "ui_webcam",
         "z": "2336185423ce7003",
-        "name": "",
+        "name": "webCamera",
         "group": "7c71c7b8.2c9fe8",
         "order": 1,
         "width": 6,
@@ -217,8 +217,8 @@
         "showImage": "15",
         "mirror": true,
         "format": "jpeg",
-        "x": 660,
-        "y": 860,
+        "x": 750,
+        "y": 960,
         "wires": [
             [
                 "555745696ab7ec8f",
@@ -236,12 +236,12 @@
         "id": "7c822f2c16d78083",
         "type": "ui_digital_clock",
         "z": "2336185423ce7003",
-        "name": "Time",
+        "name": "clkTime",
         "group": "db027e416847d093",
         "order": 1,
         "width": 4,
         "height": 1,
-        "x": 1450,
+        "x": 1460,
         "y": 540,
         "wires": []
     },
@@ -274,17 +274,18 @@
         "id": "c6f6bc0f654b1abf",
         "type": "start-up-trigger",
         "z": "2336185423ce7003",
-        "x": 860,
-        "y": 540,
+        "x": 740,
+        "y": 460,
         "wires": [
             [
                 "4e0252b5c1b4dcd0",
                 "556e34c5181215b9",
                 "53d60d7906be9fbe",
-                "6f2d38903a607413",
                 "2c18696d7758407b",
                 "2b95fe6b7bc21559",
-                "148588d63627d0eb"
+                "148588d63627d0eb",
+                "03fbe2557b177a30",
+                "6f459a53edc3cbbf"
             ]
         ]
     },
@@ -292,7 +293,7 @@
         "id": "37ae05c530ae96f6",
         "type": "delay",
         "z": "2336185423ce7003",
-        "name": "",
+        "name": "fnDelay",
         "pauseType": "delayv",
         "timeout": "4",
         "timeoutUnits": "seconds",
@@ -305,8 +306,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1060,
-        "y": 740,
+        "x": 1100,
+        "y": 680,
         "wires": [
             [
                 "8cd857ea293c044b"
@@ -325,7 +326,7 @@
         "finalize": "",
         "libs": [],
         "x": 1240,
-        "y": 740,
+        "y": 680,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -336,7 +337,7 @@
         "id": "556e34c5181215b9",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "Build Start Msg",
+        "name": "fnBuildStartMsg",
         "func": "msg.payload = \"<font size=6>AI Active</font>\";\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -344,7 +345,7 @@
         "finalize": "",
         "libs": [],
         "x": 1240,
-        "y": 620,
+        "y": 580,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -355,15 +356,15 @@
         "id": "e481ea14c81594fb",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "Filter Null",
+        "name": "fnFilterNull",
         "func": "if (msg.payload == null ) {\n    msg.payload = \"<font size=7>Unknown</font>\";\n}\nelse {\n    msg.payload = \"<font size=9>\" + msg.payload + \"</font>\";\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1060,
-        "y": 860,
+        "x": 1250,
+        "y": 620,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -371,35 +372,18 @@
         ]
     },
     {
-        "id": "057fa8d6fcac943e",
-        "type": "debug",
-        "z": "2336185423ce7003",
-        "name": "debug 3",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1420,
-        "y": 1200,
-        "wires": []
-    },
-    {
         "id": "53d60d7906be9fbe",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "Set Delay",
+        "name": "fnSetDelay",
         "func": "msg.delay = 15000;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 880,
-        "y": 740,
+        "x": 990,
+        "y": 680,
         "wires": [
             [
                 "37ae05c530ae96f6"
@@ -420,8 +404,8 @@
         "allowHTML": true,
         "outputs": 0,
         "topic": "",
-        "x": 1440,
-        "y": 960,
+        "x": 1460,
+        "y": 800,
         "wires": []
     },
     {
@@ -436,7 +420,7 @@
         "finalize": "",
         "libs": [],
         "x": 1250,
-        "y": 960,
+        "y": 800,
         "wires": [
             [
                 "368de13869d6e9dd"
@@ -464,8 +448,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "capture",
-        "x": 680,
-        "y": 1040,
+        "x": 740,
+        "y": 600,
         "wires": [
             [
                 "2c18696d7758407b"
@@ -476,7 +460,7 @@
         "id": "b902693cd950f3c5",
         "type": "ui_button",
         "z": "2336185423ce7003",
-        "name": "",
+        "name": "btnClearList",
         "group": "db027e416847d093",
         "order": 2,
         "width": 0,
@@ -492,8 +476,8 @@
         "payloadType": "str",
         "topic": "payload",
         "topicType": "msg",
-        "x": 1440,
-        "y": 860,
+        "x": 1450,
+        "y": 740,
         "wires": [
             [
                 "7a97cdc2bee59f0c"
@@ -501,35 +485,18 @@
         ]
     },
     {
-        "id": "53995a20cda21da8",
-        "type": "debug",
-        "z": "2336185423ce7003",
-        "name": "debug 4",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1420,
-        "y": 1100,
-        "wires": []
-    },
-    {
         "id": "2692d35c92873915",
         "type": "kasa",
         "z": "2336185423ce7003",
-        "name": "Office Lamp - HS103(US)",
+        "name": "kasaDevice",
         "device": "192.168.1.104",
         "interval": 60000,
         "eventInterval": 15000,
         "payload": "getInfo",
         "payloadType": "info",
         "debug": false,
-        "x": 1390,
-        "y": 1140,
+        "x": 1450,
+        "y": 920,
         "wires": [
             []
         ]
@@ -538,8 +505,8 @@
         "id": "de04546c6b40774a",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "DoAction",
-        "func": "//\n/// Functions\nfunction personAction(debug=false){\n    if (context.detection) {\n        node.warn(\"Person Check:\" + msg.payload)\n        msg.topic = context.kasaDevice;\n        msg.payload = context.kasaDeviceState = true; //\n        if (debug){ node.warn(\"Topic / Payload: \" + msg.topic + ' / ' + msg.payload); }\n    } \n}\n\nfunction toggleState(payload) {\n    node.warn(\"State Check:\" + payload)\n    // Context Found Do Function\n    if(context.kasaDeviceState == true){ \n        context.kasaDeviceState = false\n        msg.payload = context.kasaDeviceState\n    } else if (context.kasaDeviceState == false){\n        context.kasaDeviceState = true\n        msg.payload = context.kasaDeviceState\n    }    \n}\n\nfunction showWarnings(debug) {\n    if (debug){\n        node.warn(\"Detection State: \" + context.detection);\n        node.warn('Kasa State: ' + context.kasaDeviceState);\n        node.warn(\"Kasa Target IP: \" + context.kasaDevice);\n    }\n}\n\nfunction doDefaultAction(){\n    if(context.detection){\n        msg.payload = false\n        msg.topic = context.kasaDevice;\n    } else {\n        msg.topic = context.kasaDevice;\n    }\n}\n\n/// Actions\nswitch(msg.payload) {\n    case 'person': {\n        node.warn('Person case')\n        personAction();\n    }\n    break;\n    \n    case 'detectOn': {\n        node.warn('Detect On')\n        context.detection = true;\n    }\n    break;\n    \n    case 'detectOff': {\n        node.warn('Detect Off')\n        context.detection = false;\n    }\n    break;\n\n    case 'toggle': {\n        node.warn('Toggle case')\n        toggleState(msg.payload);\n    }\n    break;\n\n    case '': {\n        node.warn('Empty case')\n    }\n    break;\n    \n    case null: {\n        node.warn('Null case')\n    }\n    break;\n    \n    default: {\n        node.warn('Default case')\n        doDefaultAction();\n    }\n    break;\n}\n\nshowWarnings();\nreturn msg; ",
+        "name": "fnDoAction",
+        "func": "//\n/// Functions\nfunction personAction(debug=false){\n    if (context.detection) {\n        node.warn(\"Person Check:\" + msg.payload)\n        msg.topic = context.kasaDevice;\n        msg.payload = context.kasaDeviceState = true; //\n        if (debug){ node.warn(\"Topic / Payload: \" + msg.topic + ' / ' + msg.payload); }\n    } \n}\n\nfunction toggleState(payload) {\n    node.warn(\"State Check:\" + payload)\n    // Context Found Do Function\n    if(context.kasaDeviceState == true){ \n        context.kasaDeviceState = false\n        msg.payload = context.kasaDeviceState\n    } else if (context.kasaDeviceState == false){\n        context.kasaDeviceState = true\n        msg.payload = context.kasaDeviceState\n    }    \n}\n\nfunction showWarnings(debug=false) {\n    if (debug){\n        node.warn(\"Detection State: \" + context.detection);\n        node.warn('Kasa State: ' + context.kasaDeviceState);\n        node.warn(\"Kasa Target IP: \" + context.kasaDevice);\n    }\n}\n\nfunction doDefaultAction(){\n    if(context.detection){\n        msg.payload = false\n        msg.topic = context.kasaDevice;\n    } else {\n        msg.topic = context.kasaDevice;\n    }\n}\n\n/// Actions\nswitch(msg.payload) {\n    case 'person': {\n        node.warn('Person case')\n        personAction();\n    }\n    break;\n    \n    case 'detectOn': {\n        node.warn('Detect On')\n        context.detection = true;\n    }\n    break;\n    \n    case 'detectOff': {\n        node.warn('Detect Off')\n        context.detection = false;\n    }\n    break;\n\n    case 'toggle': {\n        node.warn('Toggle case')\n        toggleState(msg.payload);\n    }\n    break;\n\n    case '': {\n        node.warn('Empty case')\n    }\n    break;\n    \n    case null: {\n        node.warn('Null case')\n    }\n    break;\n    \n    default: {\n        node.warn('Default case')\n        doDefaultAction();\n    }\n    break;\n}\n\nshowWarnings();\nreturn msg; ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.kasaDeviceState =  false; \ncontext.kasaDevice = '192.168.1.104';\n\ncontext.detection  = true;\n\n/**/\nconst client = new tplink.Client();\n// Look for devices, log to console, and turn them on\nclient.startDiscovery().on('device-new', (device) => {\n  device.getSysInfo().then(node.warn);\n  context.deviceList.push(device.netif);\n  //device.setPowerState(true);\n  node.warn('Device Found: ' + device.netif);\n});\n\n",
@@ -550,12 +517,11 @@
                 "module": "tplink-smarthome-api"
             }
         ],
-        "x": 1040,
-        "y": 1060,
+        "x": 1250,
+        "y": 860,
         "wires": [
             [
-                "2692d35c92873915",
-                "53995a20cda21da8"
+                "2692d35c92873915"
             ]
         ]
     },
@@ -580,8 +546,8 @@
         "topic": "",
         "payload": "detectOff",
         "payloadType": "str",
-        "x": 700,
-        "y": 1160,
+        "x": 760,
+        "y": 720,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
@@ -592,7 +558,7 @@
         "id": "7b788ae6bc622dc3",
         "type": "ui_button",
         "z": "2336185423ce7003",
-        "name": "",
+        "name": "btnOffice",
         "group": "4c32eda946d15c83",
         "order": 3,
         "width": 0,
@@ -608,8 +574,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1450,
-        "y": 1020,
+        "x": 1460,
+        "y": 860,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -621,12 +587,11 @@
         "type": "cocossd",
         "z": "2336185423ce7003",
         "name": "",
-        "x": 860,
+        "x": 1000,
         "y": 860,
         "wires": [
             [
                 "53d60d7906be9fbe",
-                "057fa8d6fcac943e",
                 "de04546c6b40774a",
                 "7a97cdc2bee59f0c",
                 "e481ea14c81594fb"
@@ -638,58 +603,17 @@
         "type": "ui_text",
         "z": "2336185423ce7003",
         "group": "3c130efb92c79cbf",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Requirements",
+        "order": 2,
+        "width": "8",
+        "height": "8",
+        "name": "lblRequirements",
+        "label": "",
         "format": "{{msg.payload}}",
-        "layout": "row-spread",
+        "layout": "row-left",
         "className": "",
         "x": 1440,
-        "y": 400,
+        "y": 460,
         "wires": []
-    },
-    {
-        "id": "6f2d38903a607413",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "SetReqirementsText",
-        "func": "// \n// whenever the node is started.\nif (msg.payload == null) { \n    msg = \"\"; \n    msg.payload = \"Node-RED version: v3.0.2 <br>\";\n    msg.payload += \"Node.js  version: v18.15.0<br>\";\n    msg.payload += \"Linux 5.19.0-35-generic x64 LE<br>\";\n    msg.payload += \"<br>\";\n    msg.payload += \"semver:7.3.8,<br> \\\n            uuid:9.0.0,<br> \\\n            next:canary,<br> \\\n            node-red: 3.0.0,<br> \\\n            @tensorflow/tfjs:4.2.0,<br> \\\n            node-red-dashboard:3.4.0,<br> \\\n            node-red-contrib-startup-trigger:0.1.0,<br> \\\n            node-red-node-ui-list:0.3.6,<br> \\\n            node-red-contrib-ui-digital-clock:1.0.0,<br> \\\n            node-red-contrib-image-output:0.6.3,<br> \\\n            node-red-contrib-tplink:1.0.1,<br> \\\n            node-red-node-ui-webcam:0.4.0,<br> \\\n            @tensorflow/tfjs:4.2.0,<br> \\\n            node-red-contrib-mssql-plus:0.10.2,<br> \\\n            node-red-contrib-tensorflow:0.4.2,<br> \\\n            node-red-contrib-ui-level:0.1.46,<br> \\\n            node-red-contrib-ui-countdown-timer-switch:1.4.1,<br> \\\n            node-red-contrib-mongodb4:1.10.0\";\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1220,
-        "y": 420,
-        "wires": [
-            [
-                "6e66d7b71aed254d",
-                "e877a8f17a5355e8"
-            ]
-        ]
-    },
-    {
-        "id": "e877a8f17a5355e8",
-        "type": "ui_template",
-        "z": "2336185423ce7003",
-        "group": "3c130efb92c79cbf",
-        "name": "",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "format": "<div ng-bind-html=\"msg.payload\">\n    \n    \n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 1420,
-        "y": 440,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "f32755bc54ce9828",
@@ -712,8 +636,8 @@
         "topic": "",
         "payload": "person",
         "payloadType": "str",
-        "x": 710,
-        "y": 1080,
+        "x": 770,
+        "y": 640,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -741,8 +665,8 @@
         "topic": "",
         "payload": "couch",
         "payloadType": "str",
-        "x": 710,
-        "y": 1120,
+        "x": 770,
+        "y": 680,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -753,7 +677,7 @@
         "id": "b9f60d0d201cd2bf",
         "type": "ui_switch",
         "z": "2336185423ce7003",
-        "name": "detection",
+        "name": "swcDetection",
         "label": "Detector State",
         "tooltip": "",
         "group": "7c71c7b8.2c9fe8",
@@ -775,8 +699,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 940,
-        "y": 1200,
+        "x": 990,
+        "y": 1000,
         "wires": [
             [
                 "2528af5c9b4ee259"
@@ -787,18 +711,17 @@
         "id": "2528af5c9b4ee259",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "changeDetection",
+        "name": "fnChangeDetection",
         "func": "if (msg.payload == \"detectOn\") {\n    context.detection = true; \n} else if (msg.payload == 'detectOff') { \n    context.detection = false; \n}\nnode.warn(\"Detection State: \" + context.detection)\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.detection = true;",
         "finalize": "",
         "libs": [],
-        "x": 1130,
-        "y": 1200,
+        "x": 1230,
+        "y": 1000,
         "wires": [
             [
-                "057fa8d6fcac943e",
                 "de04546c6b40774a"
             ]
         ]
@@ -824,8 +747,8 @@
         "topic": "",
         "payload": "detectOn",
         "payloadType": "str",
-        "x": 700,
-        "y": 1200,
+        "x": 760,
+        "y": 760,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
@@ -836,15 +759,15 @@
         "id": "2b95fe6b7bc21559",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "ClearList",
+        "name": "fnClearList",
         "func": "msg.payload = 'clear';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1260,
-        "y": 860,
+        "x": 1250,
+        "y": 740,
         "wires": [
             [
                 "b902693cd950f3c5"
@@ -872,8 +795,8 @@
         "topic": "",
         "payload": "toggle",
         "payloadType": "str",
-        "x": 710,
-        "y": 1240,
+        "x": 770,
+        "y": 800,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -884,18 +807,77 @@
         "id": "148588d63627d0eb",
         "type": "function",
         "z": "2336185423ce7003",
-        "name": "Set Detection",
+        "name": "fnSetDetection",
         "func": "//msg.delay = 15000;\nmsg.payload = 'detectOn';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 920,
-        "y": 1140,
+        "x": 980,
+        "y": 960,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
+            ]
+        ]
+    },
+    {
+        "id": "da12cd7cbbe38444",
+        "type": "ui_template",
+        "z": "2336185423ce7003",
+        "group": "3c130efb92c79cbf",
+        "name": "lblDevInfo",
+        "order": 1,
+        "width": "8",
+        "height": "3",
+        "format": "<div ng-bind-html=\"msg.payload\"></div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1460,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03fbe2557b177a30",
+        "type": "template",
+        "z": "2336185423ce7003",
+        "name": "tplSetDevInfo",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>Developer</h2><br>\nRobert Burkhall<br>\nrobert.burkhall@weunderstandtechnology.com<br>\nAtlanta, Ga <br>\n",
+        "output": "str",
+        "x": 1240,
+        "y": 500,
+        "wires": [
+            [
+                "da12cd7cbbe38444"
+            ]
+        ]
+    },
+    {
+        "id": "6f459a53edc3cbbf",
+        "type": "template",
+        "z": "2336185423ce7003",
+        "name": "tplSetText",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<h2>Node Components</h2><br>\n<p>\nNode-RED version: v3.0.2 <br>\nNode.js  version: v18.15.0<br>\nLinux 5.19.0-35-generic x64 LE<br>\n</p>\n<h2>Packages</h2>\n<p tabindex=\"1\">\nsemver:7.3.8,<br>\nuuid:9.0.0,<br>\nnext:canary,<br>\nnode-red: 3.0.0,<br>\n@tensorflow/tfjs:4.2.0,<br>\nnode-red-dashboard:3.4.0,<br>\nnode-red-contrib-startup-trigger:0.1.0,<br>\nnode-red-node-ui-list:0.3.6,<br>\nnode-red-contrib-ui-digital-clock:1.0.0,<br>\nnode-red-contrib-image-output:0.6.3,<br>\nnode-red-contrib-tplink:1.0.1,<br>\nnode-red-node-ui-webcam:0.4.0,<br>\n@tensorflow/tfjs:4.2.0,<br>\nnode-red-contrib-mssql-plus:0.10.2,<br>\nnode-red-contrib-tensorflow:0.4.2,<br>\nnode-red-contrib-ui-level:0.1.46,<br>\nnode-red-contrib-ui-countdown-timer-switch:1.4.1,<br>\nnode-red-contrib-mongodb4:1.10.0\"<br>\n</p>",
+        "output": "str",
+        "x": 1260,
+        "y": 460,
+        "wires": [
+            [
+                "6e66d7b71aed254d"
             ]
         ]
     }
