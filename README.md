@@ -1,36 +1,57 @@
-# A Node-Red Slim Container based from Node18-slim
+#
+# A Fork of the Node-Red Slim Container
+ Now based from Node18-slim
+#
+ Project was forked from Apline due to lagging updates that prevent Tensorflow from working.  
 
-Current size is __374MB__ with basic Node-Red UI.
+#
+# Requirements
+#
+* Node:18-Slim (Ubuntu Based)
+* NodeJs > 18.14.0  
+* nodered/node-red:latest-18-minimal
+* apt-utils (Uninterrupted debconf builds)
+* Tensorflow/tfjs 4.2.0 (using cocossd)
+* (See package.json for more)
 
-## Multi-Stage Docker
+#
+#  Demonstrates some useful design patterns 
+#
+* Included a MainUI Flow that Controls a TPLink Kasa HS10(x) device
+* Toggle Device Button On|Off
+* Toggle Detection Switch On|Off
+* Time Clock 
+* Results to List
+* Button to Clear List
+* Delayed clearing of Text Box
 
-Base and production ready images on `node18-slim`
+#
+# 1st: Set in Node DoAction
+#
+context.kasaDevice = 'Set.Device.IP'; 
+* Example
+* context.kasaDevice = '10.10.0.5'; 
+
+#
+# Multi-Stage Docker | Ubuntu Based Image
+#
+Based on production ready images on `node18-slim`
 
 ## Usage
-
-### Building Image
-
-```bash
-docker build -t node-red-slim:latest .
-```
-### Running Image
+### Building Image & Run Script
 
 ```bash
-docker run -d --name=my-slim-nodered \
-    -e NODERED_AUTH_ADMIN_USERNAME=admin \
-    -e NODERED_AUTH_ADMIN_PASSWORD='$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.' \
-    -p 1880:1880 \
-    node-red-slim:latest
+./deploy.sh
 ```
-here the encrypted password is `password` as an example
+The encrypted password is `password` (see .env.prod file), the current default password should be regenerated for deployment.
 
-### Build and Run using `docker-compose`
+### Build and Run using `docker-compose` command
 
 ```bash
 docker-compose build nodered-slim && docker-compose up
 ```
 
-#### Build and Deploy to Swarm
+#### Build and Deploy to Docker Swarm
 ```bash
 docker-compose build nodered-slim && docker stack deploy --compose-file docker-compose.yml wuttech
 ```

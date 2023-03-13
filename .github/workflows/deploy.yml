@@ -43,7 +43,7 @@ jobs:
       - name: Prepare of Docker Build
         id: prep
         run: |
-          DOCKER_IMAGE=shantanoodesai/node-red-slim
+          DOCKER_IMAGE=wutadmin/node-red-slim
           VERSION=latest
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}

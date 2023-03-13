@@ -8,533 +8,6 @@
         "env": []
     },
     {
-        "id": "1b26de4a0563901a",
-        "type": "ui_text",
-        "z": "2336185423ce7003",
-        "group": "7c71c7b8.2c9fe8",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Dectected:",
-        "format": "{{msg.payload}}",
-        "layout": "row-left",
-        "className": "",
-        "x": 1210,
-        "y": 180,
-        "wires": [],
-        "info": "## "
-    },
-    {
-        "id": "555745696ab7ec8f",
-        "type": "image",
-        "z": "2336185423ce7003",
-        "name": "",
-        "width": "167",
-        "data": "payload",
-        "dataType": "msg",
-        "thumbnail": false,
-        "active": true,
-        "pass": true,
-        "outputs": 1,
-        "x": 680,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "2c18696d7758407b",
-        "type": "ui_webcam",
-        "z": "2336185423ce7003",
-        "name": "",
-        "group": "7c71c7b8.2c9fe8",
-        "order": 1,
-        "width": 6,
-        "height": 6,
-        "countdown": false,
-        "autoStart": true,
-        "hideCaptureButton": false,
-        "showImage": "2",
-        "mirror": true,
-        "format": "png",
-        "x": 460,
-        "y": 440,
-        "wires": [
-            [
-                "555745696ab7ec8f",
-                "ad139003a0da0fc8",
-                "ace1208f34592838"
-            ]
-        ],
-        "inputLabels": [
-            "Capture Trigger"
-        ],
-        "outputLabels": [
-            "Image Payload"
-        ]
-    },
-    {
-        "id": "7c822f2c16d78083",
-        "type": "ui_digital_clock",
-        "z": "2336185423ce7003",
-        "name": "Time",
-        "group": "db027e416847d093",
-        "order": 1,
-        "width": 4,
-        "height": 1,
-        "x": 1210,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "4e0252b5c1b4dcd0",
-        "type": "trigger",
-        "z": "2336185423ce7003",
-        "name": "",
-        "op1": "",
-        "op2": "0",
-        "op1type": "date",
-        "op2type": "str",
-        "duration": "-1",
-        "extend": false,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "stop",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 1000,
-        "y": 100,
-        "wires": [
-            [
-                "7c822f2c16d78083"
-            ]
-        ]
-    },
-    {
-        "id": "c6f6bc0f654b1abf",
-        "type": "start-up-trigger",
-        "z": "2336185423ce7003",
-        "x": 620,
-        "y": 100,
-        "wires": [
-            [
-                "4e0252b5c1b4dcd0",
-                "556e34c5181215b9",
-                "37ae05c530ae96f6"
-            ]
-        ]
-    },
-    {
-        "id": "37ae05c530ae96f6",
-        "type": "delay",
-        "z": "2336185423ce7003",
-        "name": "",
-        "pauseType": "delayv",
-        "timeout": "4",
-        "timeoutUnits": "seconds",
-        "rate": "1",
-        "nbRateUnits": "1",
-        "rateUnits": "second",
-        "randomFirst": "1",
-        "randomLast": "5",
-        "randomUnits": "seconds",
-        "drop": false,
-        "allowrate": false,
-        "outputs": 1,
-        "x": 800,
-        "y": 300,
-        "wires": [
-            [
-                "8cd857ea293c044b"
-            ]
-        ]
-    },
-    {
-        "id": "8cd857ea293c044b",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Clear Payload",
-        "func": "msg.payload = \"\"\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 300,
-        "wires": [
-            [
-                "1b26de4a0563901a"
-            ]
-        ]
-    },
-    {
-        "id": "556e34c5181215b9",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Build Start Msg",
-        "func": "msg.payload = \"<font size=6>Click Camera</font>\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1000,
-        "y": 180,
-        "wires": [
-            [
-                "1b26de4a0563901a"
-            ]
-        ]
-    },
-    {
-        "id": "e481ea14c81594fb",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Filter Null",
-        "func": "if (msg.payload == null ) {\n    msg.payload = \"<font size=7>Unknown</font>\";\n}\nelse {\n    msg.payload = \"<font size=9>\" + msg.payload + \"</font>\";\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 1020,
-        "y": 240,
-        "wires": [
-            [
-                "1b26de4a0563901a"
-            ]
-        ]
-    },
-    {
-        "id": "057fa8d6fcac943e",
-        "type": "debug",
-        "z": "2336185423ce7003",
-        "name": "debug 3",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1120,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "53d60d7906be9fbe",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Set Delay",
-        "func": "msg.delay = 15000;\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 640,
-        "y": 300,
-        "wires": [
-            [
-                "37ae05c530ae96f6"
-            ]
-        ]
-    },
-    {
-        "id": "368de13869d6e9dd",
-        "type": "ui_list",
-        "z": "2336185423ce7003",
-        "group": "db027e416847d093",
-        "name": "listDisplay",
-        "order": 2,
-        "width": 4,
-        "height": "5",
-        "lineType": "two",
-        "actionType": "none",
-        "allowHTML": true,
-        "outputs": 0,
-        "topic": "",
-        "x": 1200,
-        "y": 500,
-        "wires": []
-    },
-    {
-        "id": "7a97cdc2bee59f0c",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Set List Msg",
-        "func": "//  Check for Unknown\nif (msg.payload == null) { msg.payload = \"Unknown\" }\n//  Check for Clear/Init\nif (!context.lstDisplay || msg.payload == 'clear') {\n    context.lstDisplay = [];\n    context.lstDisplay.length = 0;\n    context.lstDisplay.push(\"Past: Detections\");\n    msg.payload = \"\";\n    //return [msg];\n}\n//\ncontext.lstDisplay.push(msg.payload);\nmsg.payload = context.lstDisplay;\nreturn [msg];\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\n/*if (!context.lstDisplay) {\n    context.lstDisplay = [\"Past-Detections\"];\n}*/",
-        "finalize": "",
-        "libs": [],
-        "x": 990,
-        "y": 500,
-        "wires": [
-            [
-                "368de13869d6e9dd",
-                "057fa8d6fcac943e"
-            ]
-        ]
-    },
-    {
-        "id": "cfcdfff242c4fe48",
-        "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "Capture Image",
-        "props": [
-            {
-                "p": "capture",
-                "v": "true",
-                "vt": "bool"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "capture",
-        "x": 480,
-        "y": 400,
-        "wires": [
-            [
-                "2c18696d7758407b"
-            ]
-        ]
-    },
-    {
-        "id": "b902693cd950f3c5",
-        "type": "ui_button",
-        "z": "2336185423ce7003",
-        "name": "",
-        "group": "db027e416847d093",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "passthru": true,
-        "label": "Clear List",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "clear",
-        "payloadType": "str",
-        "topic": "payload",
-        "topicType": "msg",
-        "x": 1200,
-        "y": 380,
-        "wires": [
-            [
-                "7a97cdc2bee59f0c"
-            ]
-        ]
-    },
-    {
-        "id": "ad139003a0da0fc8",
-        "type": "mobilenet",
-        "z": "2336185423ce7003",
-        "name": "",
-        "x": 660,
-        "y": 500,
-        "wires": [
-            [
-                "53d60d7906be9fbe",
-                "a47f4d841ee9ac9a",
-                "53995a20cda21da8"
-            ]
-        ]
-    },
-    {
-        "id": "53995a20cda21da8",
-        "type": "debug",
-        "z": "2336185423ce7003",
-        "name": "debug 4",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 940,
-        "y": 580,
-        "wires": []
-    },
-    {
-        "id": "a47f4d841ee9ac9a",
-        "type": "split",
-        "z": "2336185423ce7003",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 790,
-        "y": 420,
-        "wires": [
-            [
-                "7a97cdc2bee59f0c",
-                "53995a20cda21da8"
-            ]
-        ]
-    },
-    {
-        "id": "2692d35c92873915",
-        "type": "kasa",
-        "z": "2336185423ce7003",
-        "name": "Office Lamp - HS103(US)",
-        "device": "192.168.1.104",
-        "interval": 60000,
-        "eventInterval": 15000,
-        "payload": "getQuickInfo",
-        "payloadType": "info",
-        "debug": false,
-        "x": 1170,
-        "y": 740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d80c117b9a9aec05",
-        "type": "split",
-        "z": "2336185423ce7003",
-        "name": "",
-        "splt": "\\n",
-        "spltType": "str",
-        "arraySplt": 1,
-        "arraySpltType": "len",
-        "stream": false,
-        "addname": "",
-        "x": 770,
-        "y": 780,
-        "wires": [
-            [
-                "de04546c6b40774a"
-            ]
-        ]
-    },
-    {
-        "id": "de04546c6b40774a",
-        "type": "function",
-        "z": "2336185423ce7003",
-        "name": "TranslateGesture",
-        "func": "if (msg.payload == null){ return msg; }\nif (msg.payload == true ){\n    if (context.kasaDevice) {\n        // Context Found Do Function\n        if(context.kasaDevice == true){ \n            context.kasaDevice = false\n            msg.payload = context.kasaDevice\n//            return msg;\n        } else {\n            context.kasaDevice = true\n            msg.payload = context.kasaDevice\n//            return msg;\n        }    \n    } else {\n        //  No Context Found Set\n        context.kasaDevice = msg.payload\n//        return msg;\n    }\n    return msg;    \n}\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 950,
-        "y": 840,
-        "wires": [
-            [
-                "2692d35c92873915"
-            ]
-        ]
-    },
-    {
-        "id": "d10ece393d664093",
-        "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "Switch Toggle",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 630,
-        "y": 840,
-        "wires": [
-            [
-                "de04546c6b40774a"
-            ]
-        ]
-    },
-    {
-        "id": "9466b51e0450c0b2",
-        "type": "debug",
-        "z": "2336185423ce7003",
-        "name": "debug 5",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 760,
-        "y": 720,
-        "wires": []
-    },
-    {
-        "id": "ace1208f34592838",
-        "type": "posenet",
-        "z": "2336185423ce7003",
-        "name": "",
-        "x": 560,
-        "y": 740,
-        "wires": [
-            [
-                "d80c117b9a9aec05",
-                "9466b51e0450c0b2"
-            ]
-        ]
-    },
-    {
-        "id": "7b788ae6bc622dc3",
-        "type": "ui_button",
-        "z": "2336185423ce7003",
-        "name": "",
-        "group": "4c32eda946d15c83",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "label": "Office",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "true",
-        "payloadType": "bool",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 1190,
-        "y": 880,
-        "wires": [
-            [
-                "de04546c6b40774a"
-            ]
-        ]
-    },
-    {
         "id": "7c71c7b8.2c9fe8",
         "type": "ui_group",
         "name": "Identify Image",
@@ -572,8 +45,858 @@
         "type": "ui_tab",
         "name": "Home",
         "icon": "light",
-        "order": 3,
+        "order": 1,
         "disabled": false,
         "hidden": false
+    },
+    {
+        "id": "d3e3350ba9d20348",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "b932bb0d56c2dad5",
+        "type": "ui_tab",
+        "name": "About",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "3c130efb92c79cbf",
+        "type": "ui_group",
+        "name": "This App",
+        "tab": "b932bb0d56c2dad5",
+        "order": 1,
+        "disp": true,
+        "width": "8",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1b26de4a0563901a",
+        "type": "ui_text",
+        "z": "2336185423ce7003",
+        "group": "7c71c7b8.2c9fe8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Dectected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "className": "",
+        "x": 1430,
+        "y": 620,
+        "wires": [],
+        "info": "## "
+    },
+    {
+        "id": "555745696ab7ec8f",
+        "type": "image",
+        "z": "2336185423ce7003",
+        "name": "",
+        "width": "600",
+        "data": "payload",
+        "dataType": "msg",
+        "thumbnail": false,
+        "active": true,
+        "pass": true,
+        "outputs": 1,
+        "x": 680,
+        "y": 1280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2c18696d7758407b",
+        "type": "ui_webcam",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "7c71c7b8.2c9fe8",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "countdown": true,
+        "autoStart": true,
+        "hideCaptureButton": true,
+        "showImage": "15",
+        "mirror": true,
+        "format": "jpeg",
+        "x": 660,
+        "y": 860,
+        "wires": [
+            [
+                "555745696ab7ec8f",
+                "fcb874dc0f6fc6eb"
+            ]
+        ],
+        "inputLabels": [
+            "Capture Trigger"
+        ],
+        "outputLabels": [
+            "Image Payload"
+        ]
+    },
+    {
+        "id": "7c822f2c16d78083",
+        "type": "ui_digital_clock",
+        "z": "2336185423ce7003",
+        "name": "Time",
+        "group": "db027e416847d093",
+        "order": 1,
+        "width": 4,
+        "height": 1,
+        "x": 1450,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "4e0252b5c1b4dcd0",
+        "type": "trigger",
+        "z": "2336185423ce7003",
+        "name": "",
+        "op1": "",
+        "op2": "0",
+        "op1type": "date",
+        "op2type": "str",
+        "duration": "-1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "stop",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 1240,
+        "y": 540,
+        "wires": [
+            [
+                "7c822f2c16d78083"
+            ]
+        ]
+    },
+    {
+        "id": "c6f6bc0f654b1abf",
+        "type": "start-up-trigger",
+        "z": "2336185423ce7003",
+        "x": 860,
+        "y": 540,
+        "wires": [
+            [
+                "4e0252b5c1b4dcd0",
+                "556e34c5181215b9",
+                "53d60d7906be9fbe",
+                "6f2d38903a607413",
+                "2c18696d7758407b",
+                "2b95fe6b7bc21559",
+                "148588d63627d0eb"
+            ]
+        ]
+    },
+    {
+        "id": "37ae05c530ae96f6",
+        "type": "delay",
+        "z": "2336185423ce7003",
+        "name": "",
+        "pauseType": "delayv",
+        "timeout": "4",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1060,
+        "y": 740,
+        "wires": [
+            [
+                "8cd857ea293c044b"
+            ]
+        ]
+    },
+    {
+        "id": "8cd857ea293c044b",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Clear Payload",
+        "func": "msg.payload = \"\"\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 740,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "556e34c5181215b9",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Build Start Msg",
+        "func": "msg.payload = \"<font size=6>AI Active</font>\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1240,
+        "y": 620,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "e481ea14c81594fb",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Filter Null",
+        "func": "if (msg.payload == null ) {\n    msg.payload = \"<font size=7>Unknown</font>\";\n}\nelse {\n    msg.payload = \"<font size=9>\" + msg.payload + \"</font>\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1060,
+        "y": 860,
+        "wires": [
+            [
+                "1b26de4a0563901a"
+            ]
+        ]
+    },
+    {
+        "id": "057fa8d6fcac943e",
+        "type": "debug",
+        "z": "2336185423ce7003",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1420,
+        "y": 1200,
+        "wires": []
+    },
+    {
+        "id": "53d60d7906be9fbe",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Set Delay",
+        "func": "msg.delay = 15000;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 740,
+        "wires": [
+            [
+                "37ae05c530ae96f6"
+            ]
+        ]
+    },
+    {
+        "id": "368de13869d6e9dd",
+        "type": "ui_list",
+        "z": "2336185423ce7003",
+        "group": "db027e416847d093",
+        "name": "listDisplay",
+        "order": 2,
+        "width": 4,
+        "height": "5",
+        "lineType": "two",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 1440,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "7a97cdc2bee59f0c",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "SetListMsg",
+        "func": "//  Check for Unknown\nif (msg.payload == null) { msg.payload = \"Unknown\" }\n//  Check for Clear/Init\nif (!context.lstDisplay || msg.payload == 'clear') {\n    context.lstDisplay = [];\n    context.lstDisplay.length = 0;\n    context.lstDisplay.push(\"Past: Detections\");\n    msg.payload = context.lstDisplay;\n    return [msg];\n}\n//\ncontext.lstDisplay.push(msg.payload);\nmsg.payload = context.lstDisplay;\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n/*if (!context.lstDisplay) {\n    context.lstDisplay = [\"Past-Detections\"];\n}*/",
+        "finalize": "",
+        "libs": [],
+        "x": 1250,
+        "y": 960,
+        "wires": [
+            [
+                "368de13869d6e9dd"
+            ]
+        ]
+    },
+    {
+        "id": "cfcdfff242c4fe48",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Capture Image",
+        "props": [
+            {
+                "p": "capture",
+                "v": "true",
+                "vt": "bool"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "30",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "capture",
+        "x": 680,
+        "y": 1040,
+        "wires": [
+            [
+                "2c18696d7758407b"
+            ]
+        ]
+    },
+    {
+        "id": "b902693cd950f3c5",
+        "type": "ui_button",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "db027e416847d093",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "Clear List",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "clear",
+        "payloadType": "str",
+        "topic": "payload",
+        "topicType": "msg",
+        "x": 1440,
+        "y": 860,
+        "wires": [
+            [
+                "7a97cdc2bee59f0c"
+            ]
+        ]
+    },
+    {
+        "id": "53995a20cda21da8",
+        "type": "debug",
+        "z": "2336185423ce7003",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1420,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "2692d35c92873915",
+        "type": "kasa",
+        "z": "2336185423ce7003",
+        "name": "Office Lamp - HS103(US)",
+        "device": "192.168.1.104",
+        "interval": 60000,
+        "eventInterval": 15000,
+        "payload": "getInfo",
+        "payloadType": "info",
+        "debug": false,
+        "x": 1390,
+        "y": 1140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de04546c6b40774a",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "DoAction",
+        "func": "//\n/// Functions\nfunction personAction(debug=false){\n    if (context.detection) {\n        node.warn(\"Person Check:\" + msg.payload)\n        msg.topic = context.kasaDevice;\n        msg.payload = context.kasaDeviceState = true; //\n        if (debug){ node.warn(\"Topic / Payload: \" + msg.topic + ' / ' + msg.payload); }\n    } \n}\n\nfunction toggleState(payload) {\n    node.warn(\"State Check:\" + payload)\n    // Context Found Do Function\n    if(context.kasaDeviceState == true){ \n        context.kasaDeviceState = false\n        msg.payload = context.kasaDeviceState\n    } else if (context.kasaDeviceState == false){\n        context.kasaDeviceState = true\n        msg.payload = context.kasaDeviceState\n    }    \n}\n\nfunction showWarnings(debug) {\n    if (debug){\n        node.warn(\"Detection State: \" + context.detection);\n        node.warn('Kasa State: ' + context.kasaDeviceState);\n        node.warn(\"Kasa Target IP: \" + context.kasaDevice);\n    }\n}\n\nfunction doDefaultAction(){\n    if(context.detection){\n        msg.payload = false\n        msg.topic = context.kasaDevice;\n    } else {\n        msg.topic = context.kasaDevice;\n    }\n}\n\n/// Actions\nswitch(msg.payload) {\n    case 'person': {\n        node.warn('Person case')\n        personAction();\n    }\n    break;\n    \n    case 'detectOn': {\n        node.warn('Detect On')\n        context.detection = true;\n    }\n    break;\n    \n    case 'detectOff': {\n        node.warn('Detect Off')\n        context.detection = false;\n    }\n    break;\n\n    case 'toggle': {\n        node.warn('Toggle case')\n        toggleState(msg.payload);\n    }\n    break;\n\n    case '': {\n        node.warn('Empty case')\n    }\n    break;\n    \n    case null: {\n        node.warn('Null case')\n    }\n    break;\n    \n    default: {\n        node.warn('Default case')\n        doDefaultAction();\n    }\n    break;\n}\n\nshowWarnings();\nreturn msg; ",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.kasaDeviceState =  false; \ncontext.kasaDevice = '192.168.1.104';\n\ncontext.detection  = true;\n\n/**/\nconst client = new tplink.Client();\n// Look for devices, log to console, and turn them on\nclient.startDiscovery().on('device-new', (device) => {\n  device.getSysInfo().then(node.warn);\n  context.deviceList.push(device.netif);\n  //device.setPowerState(true);\n  node.warn('Device Found: ' + device.netif);\n});\n\n",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "tplink",
+                "module": "tplink-smarthome-api"
+            }
+        ],
+        "x": 1040,
+        "y": 1060,
+        "wires": [
+            [
+                "2692d35c92873915",
+                "53995a20cda21da8"
+            ]
+        ]
+    },
+    {
+        "id": "d10ece393d664093",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Detect Off",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "detectOff",
+        "payloadType": "str",
+        "x": 700,
+        "y": 1160,
+        "wires": [
+            [
+                "b9f60d0d201cd2bf"
+            ]
+        ]
+    },
+    {
+        "id": "7b788ae6bc622dc3",
+        "type": "ui_button",
+        "z": "2336185423ce7003",
+        "name": "",
+        "group": "4c32eda946d15c83",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Office",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "toggle",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 1450,
+        "y": 1020,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "fcb874dc0f6fc6eb",
+        "type": "cocossd",
+        "z": "2336185423ce7003",
+        "name": "",
+        "x": 860,
+        "y": 860,
+        "wires": [
+            [
+                "53d60d7906be9fbe",
+                "057fa8d6fcac943e",
+                "de04546c6b40774a",
+                "7a97cdc2bee59f0c",
+                "e481ea14c81594fb"
+            ]
+        ]
+    },
+    {
+        "id": "6e66d7b71aed254d",
+        "type": "ui_text",
+        "z": "2336185423ce7003",
+        "group": "3c130efb92c79cbf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Requirements",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1440,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "6f2d38903a607413",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "SetReqirementsText",
+        "func": "// \n// whenever the node is started.\nif (msg.payload == null) { \n    msg = \"\"; \n    msg.payload = \"Node-RED version: v3.0.2 <br>\";\n    msg.payload += \"Node.js  version: v18.15.0<br>\";\n    msg.payload += \"Linux 5.19.0-35-generic x64 LE<br>\";\n    msg.payload += \"<br>\";\n    msg.payload += \"semver:7.3.8,<br> \\\n            uuid:9.0.0,<br> \\\n            next:canary,<br> \\\n            node-red: 3.0.0,<br> \\\n            @tensorflow/tfjs:4.2.0,<br> \\\n            node-red-dashboard:3.4.0,<br> \\\n            node-red-contrib-startup-trigger:0.1.0,<br> \\\n            node-red-node-ui-list:0.3.6,<br> \\\n            node-red-contrib-ui-digital-clock:1.0.0,<br> \\\n            node-red-contrib-image-output:0.6.3,<br> \\\n            node-red-contrib-tplink:1.0.1,<br> \\\n            node-red-node-ui-webcam:0.4.0,<br> \\\n            @tensorflow/tfjs:4.2.0,<br> \\\n            node-red-contrib-mssql-plus:0.10.2,<br> \\\n            node-red-contrib-tensorflow:0.4.2,<br> \\\n            node-red-contrib-ui-level:0.1.46,<br> \\\n            node-red-contrib-ui-countdown-timer-switch:1.4.1,<br> \\\n            node-red-contrib-mongodb4:1.10.0\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1220,
+        "y": 420,
+        "wires": [
+            [
+                "6e66d7b71aed254d",
+                "e877a8f17a5355e8"
+            ]
+        ]
+    },
+    {
+        "id": "e877a8f17a5355e8",
+        "type": "ui_template",
+        "z": "2336185423ce7003",
+        "group": "3c130efb92c79cbf",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<div ng-bind-html=\"msg.payload\">\n    \n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1420,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f32755bc54ce9828",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "person",
+        "payloadType": "str",
+        "x": 710,
+        "y": 1080,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "3bebcb25f85dc1ec",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "couch",
+        "payloadType": "str",
+        "x": 710,
+        "y": 1120,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "b9f60d0d201cd2bf",
+        "type": "ui_switch",
+        "z": "2336185423ce7003",
+        "name": "detection",
+        "label": "Detector State",
+        "tooltip": "",
+        "group": "7c71c7b8.2c9fe8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "payload",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "detectOn",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "detectOff",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 940,
+        "y": 1200,
+        "wires": [
+            [
+                "2528af5c9b4ee259"
+            ]
+        ]
+    },
+    {
+        "id": "2528af5c9b4ee259",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "changeDetection",
+        "func": "if (msg.payload == \"detectOn\") {\n    context.detection = true; \n} else if (msg.payload == 'detectOff') { \n    context.detection = false; \n}\nnode.warn(\"Detection State: \" + context.detection)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.detection = true;",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 1200,
+        "wires": [
+            [
+                "057fa8d6fcac943e",
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "896d34200fe64464",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Detect On",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "detectOn",
+        "payloadType": "str",
+        "x": 700,
+        "y": 1200,
+        "wires": [
+            [
+                "b9f60d0d201cd2bf"
+            ]
+        ]
+    },
+    {
+        "id": "2b95fe6b7bc21559",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "ClearList",
+        "func": "msg.payload = 'clear';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 860,
+        "wires": [
+            [
+                "b902693cd950f3c5"
+            ]
+        ]
+    },
+    {
+        "id": "2330a9ef92146e66",
+        "type": "inject",
+        "z": "2336185423ce7003",
+        "name": "Toggle",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "toggle",
+        "payloadType": "str",
+        "x": 710,
+        "y": 1240,
+        "wires": [
+            [
+                "de04546c6b40774a"
+            ]
+        ]
+    },
+    {
+        "id": "148588d63627d0eb",
+        "type": "function",
+        "z": "2336185423ce7003",
+        "name": "Set Detection",
+        "func": "//msg.delay = 15000;\nmsg.payload = 'detectOn';\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 920,
+        "y": 1140,
+        "wires": [
+            [
+                "b9f60d0d201cd2bf"
+            ]
+        ]
     }
 ]

@@ -6,9 +6,8 @@ services:
       context: .
       dockerfile: Dockerfile
     image: wutadmin/node-red-slim:latest
-    #container_name: slim-red
+    container_name: slim-red
     env_file:
       - .env.prod
     ports:
       - "1889:1880"
-    

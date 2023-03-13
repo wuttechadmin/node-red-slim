@@ -122,8 +122,8 @@
          * The `pass` field is a bcrypt hash of the password.
          * See http://nodered.org/docs/security.html#generating-the-password-hash
          */
-        httpNodeAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
-        httpStaticAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
+        //httpNodeAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
+        //httpStaticAuth: {user:"user",pass:"$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN."},
     
     /*******************************************************************************
      * Server Settings
@@ -415,11 +415,14 @@
          *    functionGlobalContext: { os:require('os') }
          * will allow the `os` module to be accessed in a Function node using:
          *    global.get("os")
-         */
+         *
         functionGlobalContext: {
             // os:require('os'),
+        },*/
+        //
+        functionGlobalContext: {
+            //tplinkApi: require('tplink-smarthome-api'),
         },
-    
         /** The maximum number of messages nodes will buffer internally as part of their
          * operation. This applies across a range of nodes that operate on message sequences.
          * defaults to no limit. A value of 0 also means no limit is applied.
