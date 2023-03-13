@@ -5,7 +5,15 @@
  Project was forked from Apline due to lagging updates that prevent Tensorflow from working.  
 
 #
-# Requirements
+# Requires
+#
+* OS:Linux, MAC or Windows(WSL)
+* Node 
+* NPM
+* docker, docker-compose
+
+#
+# Provides
 #
 * Node:18-Slim (Ubuntu Based)
 * NodeJs > 18.14.0  
