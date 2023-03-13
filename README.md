@@ -6,7 +6,6 @@
 
 #
 # Requires
-#
 * Any Modern OS
 * * Linux
 * * MAC 
@@ -16,7 +15,8 @@
 * Docker, Docker-Compose
 * Tensorflow
 
-#### Development Tools
+#
+# Development Tools
 * Visual Studio Code
 * Docker
 * Bash
@@ -27,7 +27,6 @@
 
 #
 # Provides
-#
 * Node:18-Slim (Ubuntu Based)
 * NodeJs > 18.14.0  
 * nodered/node-red:latest-18-minimal
@@ -37,7 +36,6 @@
 
 #
 #  Demonstrates some useful design patterns 
-#
 * Included a MainUI Flow that Controls a TPLink Kasa HS10(x) device
 * Toggle Device Button On|Off
 * Toggle Detection Switch On|Off
@@ -48,14 +46,12 @@
 
 #
 # 1st: Set in Node DoAction
-#
 context.kasaDevice = 'Set.Device.IP'; 
 * Example
 * context.kasaDevice = '10.10.0.5'; 
 
 #
 # Multi-Stage Docker | Ubuntu Based Image
-#
 Based on production ready images on `node18-slim`
 
 ## Usage
