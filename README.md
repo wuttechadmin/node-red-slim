@@ -63,3 +63,5 @@ docker-compose build nodered-slim && docker-compose up
 ```bash
 docker-compose build nodered-slim && docker stack deploy --compose-file docker-compose.yml wuttech
 ```
+#### How you can help!
+Provide clear feedback and submitting detailed issues are the best ways to help.
