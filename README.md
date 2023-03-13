@@ -7,10 +7,23 @@
 #
 # Requires
 #
-* OS:Linux, MAC or Windows(WSL)
+* Any Modern OS
+* * Linux
+* * MAC 
+* * Windows(WSL)
 * Node 
 * NPM
-* docker, docker-compose
+* Docker, Docker-Compose
+* Tensorflow
+
+#### Development Tools
+* Visual Studio Code
+* Docker
+* Bash
+* Node
+* CSS
+* HTML
+* GIT
 
 #
 # Provides
@@ -65,3 +78,4 @@ docker-compose build nodered-slim && docker stack deploy --compose-file docker-c
 ```
 #### How you can help!
 Provide clear feedback and submitting detailed issues are the best ways to help.
+
