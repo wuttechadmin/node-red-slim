@@ -179,8 +179,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
-        "x": 1450,
-        "y": 580,
+        "x": 850,
+        "y": 160,
         "wires": [],
         "info": "## "
     },
@@ -196,8 +196,8 @@
         "active": true,
         "pass": true,
         "outputs": 1,
-        "x": 740,
-        "y": 1020,
+        "x": 140,
+        "y": 600,
         "wires": [
             []
         ]
@@ -217,8 +217,8 @@
         "showImage": "15",
         "mirror": true,
         "format": "jpeg",
-        "x": 750,
-        "y": 960,
+        "x": 150,
+        "y": 540,
         "wires": [
             [
                 "555745696ab7ec8f",
@@ -241,8 +241,8 @@
         "order": 1,
         "width": 4,
         "height": 1,
-        "x": 1460,
-        "y": 540,
+        "x": 860,
+        "y": 120,
         "wires": []
     },
     {
@@ -262,8 +262,8 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 1240,
-        "y": 540,
+        "x": 640,
+        "y": 120,
         "wires": [
             [
                 "7c822f2c16d78083"
@@ -274,8 +274,8 @@
         "id": "c6f6bc0f654b1abf",
         "type": "start-up-trigger",
         "z": "2336185423ce7003",
-        "x": 740,
-        "y": 460,
+        "x": 140,
+        "y": 40,
         "wires": [
             [
                 "4e0252b5c1b4dcd0",
@@ -306,8 +306,8 @@
         "drop": false,
         "allowrate": false,
         "outputs": 1,
-        "x": 1100,
-        "y": 680,
+        "x": 500,
+        "y": 260,
         "wires": [
             [
                 "8cd857ea293c044b"
@@ -325,8 +325,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 680,
+        "x": 640,
+        "y": 260,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -344,8 +344,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1240,
-        "y": 580,
+        "x": 640,
+        "y": 160,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -363,8 +363,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1250,
-        "y": 620,
+        "x": 650,
+        "y": 200,
         "wires": [
             [
                 "1b26de4a0563901a"
@@ -382,8 +382,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 680,
+        "x": 390,
+        "y": 260,
         "wires": [
             [
                 "37ae05c530ae96f6"
@@ -404,8 +404,8 @@
         "allowHTML": true,
         "outputs": 0,
         "topic": "",
-        "x": 1460,
-        "y": 800,
+        "x": 860,
+        "y": 380,
         "wires": []
     },
     {
@@ -419,8 +419,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\n/*if (!context.lstDisplay) {\n    context.lstDisplay = [\"Past-Detections\"];\n}*/",
         "finalize": "",
         "libs": [],
-        "x": 1250,
-        "y": 800,
+        "x": 650,
+        "y": 380,
         "wires": [
             [
                 "368de13869d6e9dd"
@@ -448,8 +448,8 @@
         "once": true,
         "onceDelay": 0.1,
         "topic": "capture",
-        "x": 740,
-        "y": 600,
+        "x": 140,
+        "y": 180,
         "wires": [
             [
                 "2c18696d7758407b"
@@ -476,8 +476,8 @@
         "payloadType": "str",
         "topic": "payload",
         "topicType": "msg",
-        "x": 1450,
-        "y": 740,
+        "x": 850,
+        "y": 320,
         "wires": [
             [
                 "7a97cdc2bee59f0c"
@@ -495,8 +495,8 @@
         "payload": "getInfo",
         "payloadType": "info",
         "debug": false,
-        "x": 1450,
-        "y": 920,
+        "x": 850,
+        "y": 500,
         "wires": [
             []
         ]
@@ -517,8 +517,8 @@
                 "module": "tplink-smarthome-api"
             }
         ],
-        "x": 1250,
-        "y": 860,
+        "x": 650,
+        "y": 440,
         "wires": [
             [
                 "2692d35c92873915"
@@ -546,8 +546,8 @@
         "topic": "",
         "payload": "detectOff",
         "payloadType": "str",
-        "x": 760,
-        "y": 720,
+        "x": 160,
+        "y": 300,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
@@ -574,8 +574,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 1460,
-        "y": 860,
+        "x": 860,
+        "y": 440,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -587,8 +587,8 @@
         "type": "cocossd",
         "z": "2336185423ce7003",
         "name": "",
-        "x": 1000,
-        "y": 860,
+        "x": 400,
+        "y": 440,
         "wires": [
             [
                 "53d60d7906be9fbe",
@@ -611,8 +611,8 @@
         "format": "{{msg.payload}}",
         "layout": "row-left",
         "className": "",
-        "x": 1440,
-        "y": 460,
+        "x": 840,
+        "y": 40,
         "wires": []
     },
     {
@@ -636,8 +636,8 @@
         "topic": "",
         "payload": "person",
         "payloadType": "str",
-        "x": 770,
-        "y": 640,
+        "x": 170,
+        "y": 220,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -665,8 +665,8 @@
         "topic": "",
         "payload": "couch",
         "payloadType": "str",
-        "x": 770,
-        "y": 680,
+        "x": 170,
+        "y": 260,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -699,8 +699,8 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 990,
-        "y": 1000,
+        "x": 390,
+        "y": 580,
         "wires": [
             [
                 "2528af5c9b4ee259"
@@ -718,8 +718,8 @@
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.detection = true;",
         "finalize": "",
         "libs": [],
-        "x": 1230,
-        "y": 1000,
+        "x": 630,
+        "y": 580,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -747,8 +747,8 @@
         "topic": "",
         "payload": "detectOn",
         "payloadType": "str",
-        "x": 760,
-        "y": 760,
+        "x": 160,
+        "y": 340,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
@@ -766,8 +766,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1250,
-        "y": 740,
+        "x": 650,
+        "y": 320,
         "wires": [
             [
                 "b902693cd950f3c5"
@@ -795,8 +795,8 @@
         "topic": "",
         "payload": "toggle",
         "payloadType": "str",
-        "x": 770,
-        "y": 800,
+        "x": 170,
+        "y": 380,
         "wires": [
             [
                 "de04546c6b40774a"
@@ -814,8 +814,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 980,
-        "y": 960,
+        "x": 380,
+        "y": 540,
         "wires": [
             [
                 "b9f60d0d201cd2bf"
@@ -837,8 +837,8 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1460,
-        "y": 500,
+        "x": 860,
+        "y": 80,
         "wires": [
             []
         ]
@@ -854,8 +854,8 @@
         "syntax": "mustache",
         "template": "<h2>Developer</h2><br>\nRobert Burkhall<br>\nrobert.burkhall@weunderstandtechnology.com<br>\nAtlanta, Ga <br>\n",
         "output": "str",
-        "x": 1240,
-        "y": 500,
+        "x": 640,
+        "y": 80,
         "wires": [
             [
                 "da12cd7cbbe38444"
@@ -873,8 +873,8 @@
         "syntax": "mustache",
         "template": "<h2>Node Components</h2><br>\n<p>\nNode-RED version: v3.0.2 <br>\nNode.js  version: v18.15.0<br>\nLinux 5.19.0-35-generic x64 LE<br>\n</p>\n<h2>Packages</h2>\n<p tabindex=\"1\">\nsemver:7.3.8,<br>\nuuid:9.0.0,<br>\nnext:canary,<br>\nnode-red: 3.0.0,<br>\n@tensorflow/tfjs:4.2.0,<br>\nnode-red-dashboard:3.4.0,<br>\nnode-red-contrib-startup-trigger:0.1.0,<br>\nnode-red-node-ui-list:0.3.6,<br>\nnode-red-contrib-ui-digital-clock:1.0.0,<br>\nnode-red-contrib-image-output:0.6.3,<br>\nnode-red-contrib-tplink:1.0.1,<br>\nnode-red-node-ui-webcam:0.4.0,<br>\n@tensorflow/tfjs:4.2.0,<br>\nnode-red-contrib-mssql-plus:0.10.2,<br>\nnode-red-contrib-tensorflow:0.4.2,<br>\nnode-red-contrib-ui-level:0.1.46,<br>\nnode-red-contrib-ui-countdown-timer-switch:1.4.1,<br>\nnode-red-contrib-mongodb4:1.10.0\"<br>\n</p>",
         "output": "str",
-        "x": 1260,
-        "y": 460,
+        "x": 660,
+        "y": 40,
         "wires": [
             [
                 "6e66d7b71aed254d"
