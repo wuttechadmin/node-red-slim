@@ -3,7 +3,7 @@
  Now based from Node18-slim
 #
  Project was forked from Apline due to lagging updates that prevent Tensorflow from working.  
-![alt text](https://github.com/wutadmin/node-red-slim/images/main/flow.png?raw=true)
+![alt text](https://github.com/wuttechadmin/node-red-slim/blob/main/images/flow.png?raw=true)
 
 #
 # Requires
@@ -44,7 +44,7 @@
 * Results to List
 * Button to Clear List
 * Delayed clearing of Text Box
-![alt text](https://github.com/wutadmin/node-red-slim/images/main/flow-and-app.png?raw=true)
+![alt text](https://github.com/wutadmin/node-red-slim/blog/main/images/flow-and-app.png?raw=true)
 #
 # 1st: Set in Node DoAction
 context.kasaDevice = 'Set.Device.IP'; 
