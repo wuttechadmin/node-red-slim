@@ -77,3 +77,9 @@ docker-compose build nodered-slim && docker stack deploy --compose-file docker-c
 #### How you can help!
 Provide clear feedback and submitting detailed issues are the best ways to help.
 
+####
+###
+##
+#           Cavets for Windows (WSL)
+* .env.prod file requires single quotes around password parameter as show below.
+* * NODERED_AUTH_ADMIN_PASSWORD='!{Crazy-Long-Password}'
