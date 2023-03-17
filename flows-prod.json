@@ -1,6 +1,6 @@
 [
     {
-        "id": "2336185423ce7003",
+        "id": "e909f3d911422da7",
         "type": "tab",
         "label": "Main UI",
         "disabled": false,
@@ -12,7 +12,7 @@
         "type": "ui_group",
         "name": "Identify Image",
         "tab": "fbf5c038.d632b",
-        "order": 3,
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -21,9 +21,9 @@
     {
         "id": "db027e416847d093",
         "type": "ui_group",
-        "name": "Time",
+        "name": "Detections",
         "tab": "fbf5c038.d632b",
-        "order": 2,
+        "order": 4,
         "disp": true,
         "width": "4",
         "collapse": false,
@@ -34,7 +34,7 @@
         "type": "ui_group",
         "name": "Controls",
         "tab": "fbf5c038.d632b",
-        "order": 1,
+        "order": 2,
         "disp": true,
         "width": "2",
         "collapse": false,
@@ -53,7 +53,7 @@
         "id": "d3e3350ba9d20348",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
@@ -63,9 +63,10 @@
             },
             "darkTheme": {
                 "default": "#097479",
-                "baseColor": "#097479",
+                "baseColor": "#5a69dd",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
@@ -75,44 +76,44 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
-                    "edited": false
+                    "default": "#097479",
+                    "value": "#5a69dd",
+                    "edited": true
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#5a69dd",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#99a3ea",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#5a69dd",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -167,9 +168,62 @@
         "className": ""
     },
     {
-        "id": "1b26de4a0563901a",
+        "id": "da0ca243d2d46654",
+        "type": "ui_group",
+        "name": "MainUI",
+        "tab": "f51158cf17eb8e52",
+        "order": 1,
+        "disp": true,
+        "width": "16",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f51158cf17eb8e52",
+        "type": "ui_tab",
+        "name": "WUTTECH Monitoring",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "38193c8ae0fbe830",
+        "type": "ui_group",
+        "name": "Attributes",
+        "tab": "fbf5c038.d632b",
+        "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "11178920f7e68ca3",
+        "type": "ui_group",
+        "name": "Time",
+        "tab": "fbf5c038.d632b",
+        "order": 1,
+        "disp": true,
+        "width": "2",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "39d9eaba67bb6b0e",
+        "type": "ui_group",
+        "name": "Attributes",
+        "tab": "fbf5c038.d632b",
+        "order": 3,
+        "disp": true,
+        "width": "4",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e203d10db5bb6a8b",
         "type": "ui_text",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "group": "7c71c7b8.2c9fe8",
         "order": 2,
         "width": 0,
@@ -185,10 +239,10 @@
         "info": "## "
     },
     {
-        "id": "555745696ab7ec8f",
+        "id": "3fd734e2bf2a17d2",
         "type": "image",
-        "z": "2336185423ce7003",
-        "name": "",
+        "z": "e909f3d911422da7",
+        "name": "ipImage_Preview",
         "width": "600",
         "data": "payload",
         "dataType": "msg",
@@ -196,24 +250,24 @@
         "active": true,
         "pass": true,
         "outputs": 1,
-        "x": 140,
+        "x": 150,
         "y": 600,
         "wires": [
             []
         ]
     },
     {
-        "id": "2c18696d7758407b",
+        "id": "2b50424718f8ca83",
         "type": "ui_webcam",
-        "z": "2336185423ce7003",
-        "name": "webCamera",
+        "z": "e909f3d911422da7",
+        "name": "wcCamera",
         "group": "7c71c7b8.2c9fe8",
         "order": 1,
         "width": 6,
         "height": 6,
         "countdown": true,
         "autoStart": true,
-        "hideCaptureButton": true,
+        "hideCaptureButton": false,
         "showImage": "15",
         "mirror": true,
         "format": "jpeg",
@@ -221,8 +275,9 @@
         "y": 540,
         "wires": [
             [
-                "555745696ab7ec8f",
-                "fcb874dc0f6fc6eb"
+                "3fd734e2bf2a17d2",
+                "fa1fd9c6f999b745",
+                "7500fe35255ce331"
             ]
         ],
         "inputLabels": [
@@ -233,23 +288,23 @@
         ]
     },
     {
-        "id": "7c822f2c16d78083",
+        "id": "3746b7f0e1b0285c",
         "type": "ui_digital_clock",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "clkTime",
-        "group": "db027e416847d093",
+        "group": "11178920f7e68ca3",
         "order": 1,
-        "width": 4,
+        "width": "2",
         "height": 1,
         "x": 860,
         "y": 120,
         "wires": []
     },
     {
-        "id": "4e0252b5c1b4dcd0",
+        "id": "1f40d9e83b3a41e3",
         "type": "trigger",
-        "z": "2336185423ce7003",
-        "name": "",
+        "z": "e909f3d911422da7",
+        "name": "dtTrigger",
         "op1": "",
         "op2": "0",
         "op1type": "date",
@@ -262,37 +317,37 @@
         "bytopic": "all",
         "topic": "topic",
         "outputs": 1,
-        "x": 640,
+        "x": 660,
         "y": 120,
         "wires": [
             [
-                "7c822f2c16d78083"
+                "3746b7f0e1b0285c"
             ]
         ]
     },
     {
-        "id": "c6f6bc0f654b1abf",
+        "id": "652d8894dc92469f",
         "type": "start-up-trigger",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "x": 140,
         "y": 40,
         "wires": [
             [
-                "4e0252b5c1b4dcd0",
-                "556e34c5181215b9",
-                "53d60d7906be9fbe",
-                "2c18696d7758407b",
-                "2b95fe6b7bc21559",
-                "148588d63627d0eb",
-                "03fbe2557b177a30",
-                "6f459a53edc3cbbf"
+                "1f40d9e83b3a41e3",
+                "a3274110eb89b6c7",
+                "6caa6e4e65400336",
+                "2b50424718f8ca83",
+                "be99cb288c5fdb3a",
+                "68bc93a0bd0fab79",
+                "1c3d19d712a75a0f",
+                "d9bac164a4b440d3"
             ]
         ]
     },
     {
-        "id": "37ae05c530ae96f6",
+        "id": "37ec910349d77ff1",
         "type": "delay",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnDelay",
         "pauseType": "delayv",
         "timeout": "4",
@@ -310,15 +365,15 @@
         "y": 260,
         "wires": [
             [
-                "8cd857ea293c044b"
+                "49fd28bb96345505"
             ]
         ]
     },
     {
-        "id": "8cd857ea293c044b",
+        "id": "49fd28bb96345505",
         "type": "function",
-        "z": "2336185423ce7003",
-        "name": "Clear Payload",
+        "z": "e909f3d911422da7",
+        "name": "fnClearPayload",
         "func": "msg.payload = \"\"\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
@@ -329,14 +384,15 @@
         "y": 260,
         "wires": [
             [
-                "1b26de4a0563901a"
+                "e203d10db5bb6a8b",
+                "be99cb288c5fdb3a"
             ]
         ]
     },
     {
-        "id": "556e34c5181215b9",
+        "id": "a3274110eb89b6c7",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnBuildStartMsg",
         "func": "msg.payload = \"<font size=6>AI Active</font>\";\nreturn msg;",
         "outputs": 1,
@@ -348,14 +404,14 @@
         "y": 160,
         "wires": [
             [
-                "1b26de4a0563901a"
+                "e203d10db5bb6a8b"
             ]
         ]
     },
     {
-        "id": "e481ea14c81594fb",
+        "id": "2c94cbac532d5d55",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnFilterNull",
         "func": "if (msg.payload == null ) {\n    msg.payload = \"<font size=7>Unknown</font>\";\n}\nelse {\n    msg.payload = \"<font size=9>\" + msg.payload + \"</font>\";\n}\nreturn msg;",
         "outputs": 1,
@@ -367,16 +423,16 @@
         "y": 200,
         "wires": [
             [
-                "1b26de4a0563901a"
+                "e203d10db5bb6a8b"
             ]
         ]
     },
     {
-        "id": "53d60d7906be9fbe",
+        "id": "6caa6e4e65400336",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnSetDelay",
-        "func": "msg.delay = 15000;\nreturn msg;",
+        "func": "msg.delay = 20000;\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -386,51 +442,51 @@
         "y": 260,
         "wires": [
             [
-                "37ae05c530ae96f6"
+                "37ec910349d77ff1"
             ]
         ]
     },
     {
-        "id": "368de13869d6e9dd",
+        "id": "b659197d49a66e6f",
         "type": "ui_list",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "group": "db027e416847d093",
-        "name": "listDisplay",
-        "order": 2,
-        "width": 4,
-        "height": "5",
+        "name": "lsDisplay",
+        "order": 1,
+        "width": "3",
+        "height": "6",
         "lineType": "two",
         "actionType": "none",
         "allowHTML": true,
         "outputs": 0,
         "topic": "",
         "x": 860,
-        "y": 380,
+        "y": 360,
         "wires": []
     },
     {
-        "id": "7a97cdc2bee59f0c",
+        "id": "bf9e5e7b9eedba9d",
         "type": "function",
-        "z": "2336185423ce7003",
-        "name": "SetListMsg",
-        "func": "//  Check for Unknown\nif (msg.payload == null) { msg.payload = \"Unknown\" }\n//  Check for Clear/Init\nif (!context.lstDisplay || msg.payload == 'clear') {\n    context.lstDisplay = [];\n    context.lstDisplay.length = 0;\n    context.lstDisplay.push(\"Past: Detections\");\n    msg.payload = context.lstDisplay;\n    return [msg];\n}\n//\ncontext.lstDisplay.push(msg.payload);\nmsg.payload = context.lstDisplay;\nreturn [msg];\n",
+        "z": "e909f3d911422da7",
+        "name": "fnSetListMsg",
+        "func": "//  Check for Unknown\n\n//  Check for Clear/Init\nif (!context.lstDisplay || msg.payload == 'clear') {\n    context.lstDisplay = [];\n    context.lstDisplay.length = 0;\n    //context.lstDisplay.push(\"Past: Detection\");\n    msg.payload = context.lstDisplay;\n    return [msg];\n}\nswitch(msg.payload) {\n    case null: {\n        msg.payload = \"Unknown\"\n        context.lstDisplay.push(msg.payload);\n        msg.payload = context.lstDisplay;\n    }\n    break;\n    case 'clear': {\n        context.lstDisplay = [];\n        context.lstDisplay.length = 0;\n        //context.lstDisplay.push(\"Past: Detection\");\n        msg.payload = context.lstDisplay;\n    }\n    break;\n    default:{\n        context.lstDisplay.push(msg.payload);\n        msg.payload = context.lstDisplay;\n    }\n    break;\n}\n\n\nreturn [msg];\n",
         "outputs": 1,
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\n/*if (!context.lstDisplay) {\n    context.lstDisplay = [\"Past-Detections\"];\n}*/",
+        "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 650,
-        "y": 380,
+        "y": 360,
         "wires": [
             [
-                "368de13869d6e9dd"
+                "b659197d49a66e6f"
             ]
         ]
     },
     {
-        "id": "cfcdfff242c4fe48",
+        "id": "eccb7f02e5f8758c",
         "type": "inject",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "Capture Image",
         "props": [
             {
@@ -452,14 +508,14 @@
         "y": 180,
         "wires": [
             [
-                "2c18696d7758407b"
+                "2b50424718f8ca83"
             ]
         ]
     },
     {
-        "id": "b902693cd950f3c5",
+        "id": "2fe3c988dbf03c39",
         "type": "ui_button",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "btnClearList",
         "group": "db027e416847d093",
         "order": 2,
@@ -480,14 +536,15 @@
         "y": 320,
         "wires": [
             [
-                "7a97cdc2bee59f0c"
+                "bf9e5e7b9eedba9d",
+                "127f6f1c89257619"
             ]
         ]
     },
     {
-        "id": "2692d35c92873915",
+        "id": "25ae4643e0ac423b",
         "type": "kasa",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "kasaDevice",
         "device": "192.168.1.104",
         "interval": 60000,
@@ -496,17 +553,17 @@
         "payloadType": "info",
         "debug": false,
         "x": 850,
-        "y": 500,
+        "y": 520,
         "wires": [
             []
         ]
     },
     {
-        "id": "de04546c6b40774a",
+        "id": "a7b930d80dc3e2cf",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnDoAction",
-        "func": "//\n/// Functions\nfunction personAction(debug=false){\n    if (context.detection) {\n        node.warn(\"Person Check:\" + msg.payload)\n        msg.topic = context.kasaDevice;\n        msg.payload = context.kasaDeviceState = true; //\n        if (debug){ node.warn(\"Topic / Payload: \" + msg.topic + ' / ' + msg.payload); }\n    } \n}\n\nfunction toggleState(payload) {\n    node.warn(\"State Check:\" + payload)\n    // Context Found Do Function\n    if(context.kasaDeviceState == true){ \n        context.kasaDeviceState = false\n        msg.payload = context.kasaDeviceState\n    } else if (context.kasaDeviceState == false){\n        context.kasaDeviceState = true\n        msg.payload = context.kasaDeviceState\n    }    \n}\n\nfunction showWarnings(debug=false) {\n    if (debug){\n        node.warn(\"Detection State: \" + context.detection);\n        node.warn('Kasa State: ' + context.kasaDeviceState);\n        node.warn(\"Kasa Target IP: \" + context.kasaDevice);\n    }\n}\n\nfunction doDefaultAction(){\n    if(context.detection){\n        msg.payload = false\n        msg.topic = context.kasaDevice;\n    } else {\n        msg.topic = context.kasaDevice;\n    }\n}\n\n/// Actions\nswitch(msg.payload) {\n    case 'person': {\n        node.warn('Person case')\n        personAction();\n    }\n    break;\n    \n    case 'detectOn': {\n        node.warn('Detect On')\n        context.detection = true;\n    }\n    break;\n    \n    case 'detectOff': {\n        node.warn('Detect Off')\n        context.detection = false;\n    }\n    break;\n\n    case 'toggle': {\n        node.warn('Toggle case')\n        toggleState(msg.payload);\n    }\n    break;\n\n    case '': {\n        node.warn('Empty case')\n    }\n    break;\n    \n    case null: {\n        node.warn('Null case')\n    }\n    break;\n    \n    default: {\n        node.warn('Default case')\n        doDefaultAction();\n    }\n    break;\n}\n\nshowWarnings();\nreturn msg; ",
+        "func": "//\n/// Functions\nfunction personAction(debug=false){\n    if (context.detection) {\n        node.warn(\"Person Check:\" + msg.payload)\n        msg.topic = context.kasaDevice;\n        msg.payload = context.kasaDeviceState = true; //\n        if (debug){ node.warn(\"Topic / Payload: \" + msg.topic + ' / ' + msg.payload); }\n    } \n}\n\nfunction toggleState(payload) {\n    node.warn(\"State Check:\" + payload)\n    // Context Found Do Function\n    if(context.kasaDeviceState == true){ \n        context.kasaDeviceState = false\n        msg.payload = context.kasaDeviceState\n    } else if (context.kasaDeviceState == false){\n        context.kasaDeviceState = true\n        msg.payload = context.kasaDeviceState\n    }    \n}\n\nfunction showWarnings(debug=false) {\n    if (debug){\n        node.warn(\"Detection State: \" + context.detection);\n        node.warn('Kasa State: ' + context.kasaDeviceState);\n        node.warn(\"Kasa Target IP: \" + context.kasaDevice);\n    }\n}\n\nfunction doDefaultAction(){\n    if(context.detection){\n        msg.payload = false\n        msg.topic = context.kasaDevice;\n    } else {\n        msg.topic = context.kasaDevice;\n    }\n}\n\n/// Actions\nswitch(msg.payload) {\n    case 'person': {\n        node.warn('Person case')\n        personAction();\n    }\n    break;\n    \n    case 'detectOn': {\n        node.warn('Detect On')\n        context.detection = true;\n        msg.topic = context.kasaDevice;\n    }\n    break;\n    \n    case 'detectOff': {\n        node.warn('Detect Off')\n        context.detection = false;\n        msg.topic = context.kasaDevice;\n    }\n    break;\n\n    case 'toggle': {\n        node.warn('Toggle case')\n        toggleState(msg.payload);\n    }\n    break;\n\n    case '': {\n        node.warn('Empty case')\n        msg.topic = context.kasaDevice;\n    }\n    break;\n    \n    case null: {\n        node.warn('Null case')\n        msg.topic = context.kasaDevice;\n    }\n    break;\n    \n    default: {\n        node.warn('Default case')\n        doDefaultAction();\n    }\n    break;\n}\n\nshowWarnings();\nreturn msg; ",
         "outputs": 1,
         "noerr": 0,
         "initialize": "// Code added here will be run once\n// whenever the node is started.\ncontext.kasaDeviceState =  false; \ncontext.kasaDevice = '192.168.1.104';\n\ncontext.detection  = true;\n\n/**/\nconst client = new tplink.Client();\n// Look for devices, log to console, and turn them on\nclient.startDiscovery().on('device-new', (device) => {\n  device.getSysInfo().then(node.warn);\n  context.deviceList.push(device.netif);\n  //device.setPowerState(true);\n  node.warn('Device Found: ' + device.netif);\n});\n\n",
@@ -518,18 +575,18 @@
             }
         ],
         "x": 650,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
-                "2692d35c92873915"
+                "25ae4643e0ac423b"
             ]
         ]
     },
     {
-        "id": "d10ece393d664093",
+        "id": "f293acbdcd2540d2",
         "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "Detect Off",
+        "z": "e909f3d911422da7",
+        "name": "ijDetect _Off",
         "props": [
             {
                 "p": "payload"
@@ -546,21 +603,21 @@
         "topic": "",
         "payload": "detectOff",
         "payloadType": "str",
-        "x": 160,
+        "x": 150,
         "y": 300,
         "wires": [
             [
-                "b9f60d0d201cd2bf"
+                "fe45d704dc1e8d51"
             ]
         ]
     },
     {
-        "id": "7b788ae6bc622dc3",
+        "id": "c95dc4994e3e985e",
         "type": "ui_button",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "btnOffice",
         "group": "4c32eda946d15c83",
-        "order": 3,
+        "order": 1,
         "width": 0,
         "height": 0,
         "passthru": false,
@@ -575,33 +632,33 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 860,
-        "y": 440,
+        "y": 460,
         "wires": [
             [
-                "de04546c6b40774a"
+                "a7b930d80dc3e2cf"
             ]
         ]
     },
     {
-        "id": "fcb874dc0f6fc6eb",
+        "id": "fa1fd9c6f999b745",
         "type": "cocossd",
-        "z": "2336185423ce7003",
-        "name": "",
+        "z": "e909f3d911422da7",
+        "name": "tfCocossd",
         "x": 400,
-        "y": 440,
+        "y": 360,
         "wires": [
             [
-                "53d60d7906be9fbe",
-                "de04546c6b40774a",
-                "7a97cdc2bee59f0c",
-                "e481ea14c81594fb"
+                "6caa6e4e65400336",
+                "a7b930d80dc3e2cf",
+                "bf9e5e7b9eedba9d",
+                "2c94cbac532d5d55"
             ]
         ]
     },
     {
-        "id": "6e66d7b71aed254d",
+        "id": "e8ae4f98a53628dc",
         "type": "ui_text",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "group": "3c130efb92c79cbf",
         "order": 2,
         "width": "8",
@@ -616,10 +673,10 @@
         "wires": []
     },
     {
-        "id": "f32755bc54ce9828",
+        "id": "286ee0ef9995a3d3",
         "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "",
+        "z": "e909f3d911422da7",
+        "name": "ijPerson",
         "props": [
             {
                 "p": "payload"
@@ -636,19 +693,19 @@
         "topic": "",
         "payload": "person",
         "payloadType": "str",
-        "x": 170,
+        "x": 160,
         "y": 220,
         "wires": [
             [
-                "de04546c6b40774a"
+                "a7b930d80dc3e2cf"
             ]
         ]
     },
     {
-        "id": "3bebcb25f85dc1ec",
+        "id": "faefac613f227a30",
         "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "",
+        "z": "e909f3d911422da7",
+        "name": "ijCouch",
         "props": [
             {
                 "p": "payload"
@@ -669,16 +726,16 @@
         "y": 260,
         "wires": [
             [
-                "de04546c6b40774a"
+                "a7b930d80dc3e2cf"
             ]
         ]
     },
     {
-        "id": "b9f60d0d201cd2bf",
+        "id": "fe45d704dc1e8d51",
         "type": "ui_switch",
-        "z": "2336185423ce7003",
-        "name": "swcDetection",
-        "label": "Detector State",
+        "z": "e909f3d911422da7",
+        "name": "swDetection",
+        "label": "Detector Action",
         "tooltip": "",
         "group": "7c71c7b8.2c9fe8",
         "order": 1,
@@ -703,14 +760,14 @@
         "y": 580,
         "wires": [
             [
-                "2528af5c9b4ee259"
+                "4be2c00ee370bcd0"
             ]
         ]
     },
     {
-        "id": "2528af5c9b4ee259",
+        "id": "4be2c00ee370bcd0",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnChangeDetection",
         "func": "if (msg.payload == \"detectOn\") {\n    context.detection = true; \n} else if (msg.payload == 'detectOff') { \n    context.detection = false; \n}\nnode.warn(\"Detection State: \" + context.detection)\nreturn msg;",
         "outputs": 1,
@@ -722,15 +779,15 @@
         "y": 580,
         "wires": [
             [
-                "de04546c6b40774a"
+                "a7b930d80dc3e2cf"
             ]
         ]
     },
     {
-        "id": "896d34200fe64464",
+        "id": "dfc279566dcd01c5",
         "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "Detect On",
+        "z": "e909f3d911422da7",
+        "name": "ijDetect_On",
         "props": [
             {
                 "p": "payload"
@@ -747,18 +804,18 @@
         "topic": "",
         "payload": "detectOn",
         "payloadType": "str",
-        "x": 160,
+        "x": 150,
         "y": 340,
         "wires": [
             [
-                "b9f60d0d201cd2bf"
+                "fe45d704dc1e8d51"
             ]
         ]
     },
     {
-        "id": "2b95fe6b7bc21559",
+        "id": "be99cb288c5fdb3a",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnClearList",
         "func": "msg.payload = 'clear';\nreturn msg;",
         "outputs": 1,
@@ -770,15 +827,15 @@
         "y": 320,
         "wires": [
             [
-                "b902693cd950f3c5"
+                "2fe3c988dbf03c39"
             ]
         ]
     },
     {
-        "id": "2330a9ef92146e66",
+        "id": "dc1866e581b596cf",
         "type": "inject",
-        "z": "2336185423ce7003",
-        "name": "Toggle",
+        "z": "e909f3d911422da7",
+        "name": "ijToggle",
         "props": [
             {
                 "p": "payload"
@@ -799,14 +856,14 @@
         "y": 380,
         "wires": [
             [
-                "de04546c6b40774a"
+                "a7b930d80dc3e2cf"
             ]
         ]
     },
     {
-        "id": "148588d63627d0eb",
+        "id": "68bc93a0bd0fab79",
         "type": "function",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "fnSetDetection",
         "func": "//msg.delay = 15000;\nmsg.payload = 'detectOn';\nreturn msg;",
         "outputs": 1,
@@ -818,14 +875,14 @@
         "y": 540,
         "wires": [
             [
-                "b9f60d0d201cd2bf"
+                "fe45d704dc1e8d51"
             ]
         ]
     },
     {
-        "id": "da12cd7cbbe38444",
+        "id": "845d11502d8e7635",
         "type": "ui_template",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "group": "3c130efb92c79cbf",
         "name": "lblDevInfo",
         "order": 1,
@@ -844,9 +901,9 @@
         ]
     },
     {
-        "id": "03fbe2557b177a30",
+        "id": "1c3d19d712a75a0f",
         "type": "template",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "tplSetDevInfo",
         "field": "payload",
         "fieldType": "msg",
@@ -858,14 +915,14 @@
         "y": 80,
         "wires": [
             [
-                "da12cd7cbbe38444"
+                "845d11502d8e7635"
             ]
         ]
     },
     {
-        "id": "6f459a53edc3cbbf",
+        "id": "d9bac164a4b440d3",
         "type": "template",
-        "z": "2336185423ce7003",
+        "z": "e909f3d911422da7",
         "name": "tplSetText",
         "field": "payload",
         "fieldType": "msg",
@@ -877,7 +934,74 @@
         "y": 40,
         "wires": [
             [
-                "6e66d7b71aed254d"
+                "e8ae4f98a53628dc"
+            ]
+        ]
+    },
+    {
+        "id": "fb1a2fb1c2e3b649",
+        "type": "debug",
+        "z": "e909f3d911422da7",
+        "name": "tfHandPose",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "7500fe35255ce331",
+        "type": "posenet",
+        "z": "e909f3d911422da7",
+        "name": "tfPosenet",
+        "x": 400,
+        "y": 400,
+        "wires": [
+            [
+                "127f6f1c89257619"
+            ]
+        ]
+    },
+    {
+        "id": "298a4929b7651712",
+        "type": "ui_list",
+        "z": "e909f3d911422da7",
+        "group": "39d9eaba67bb6b0e",
+        "name": "lsAttributes",
+        "order": 1,
+        "width": "4",
+        "height": "7",
+        "lineType": "two",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 850,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "127f6f1c89257619",
+        "type": "function",
+        "z": "e909f3d911422da7",
+        "name": "fnSetAttribMsg",
+        "func": "switch(msg.payload) {\n    case null: {\n        msg.payload = \"Unknown\"\n        context.lstDisplay.push(msg.payload);\n        msg.payload = context.lstDisplay;\n    }\n    break;\n    case 'clear': {\n        context.lstDisplay = [];\n//        context.lstDisplay.length = 0;\n//        context.lstDisplay.push(\"Past: Attributes\");\n        msg.payload = context.lstDisplay;\n    }\n    break;\n    default:{\n        Object.keys(msg.payload).forEach(key => {\n          //node.warn(key, msg.payload[key]);\n          context.lstDisplay.push(key);\n        }); \n\n       // context.lstDisplay.push(msg.payload);\n        msg.payload = context.lstDisplay;\n    }\n    break;\n}\n\n\nreturn [msg];\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 400,
+        "wires": [
+            [
+                "298a4929b7651712"
             ]
         ]
     }

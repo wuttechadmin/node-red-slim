@@ -14,21 +14,22 @@
         "uuid":"9.0.0",
         "next":"canary",
         "node-red": ">=3.0.0",
+        "@tensorflow/tfjs":"4.2.0",
+        "@tensorflow/tfjs-node":"4.2.0",
         "@tensorflow/tfjs-node-gpu":"4.2.0",
         "node-red-dashboard":"^3.4.0",
         "node-red-contrib-startup-trigger":"0.1.0",
         "node-red-node-ui-list":"0.3.6",
         "node-red-contrib-ui-digital-clock":"1.0.0",
         "node-red-contrib-image-output":"0.6.3",
+        "tplink-smarthome-api":"4.2.0",
         "node-red-contrib-tplink":"1.0.1",
         "node-red-node-ui-webcam":"0.4.0",
         "node-red-contrib-mssql-plus":"0.10.2",
         "node-red-contrib-tensorflow":"0.4.2",
         "node-red-contrib-ui-level":"^0.1.46",
         "node-red-contrib-ui-countdown-timer-switch":"1.4.1",
-        "node-red-contrib-mongodb4":"1.10.0",
-        "tplink-smarthome-api":"4.2.0",
-        "node-red-contrib-camera-motion":"1.0.2"
+        "node-red-contrib-mongodb4":"1.10.0"
     },
     "scripts": {
         "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS --userDir=/data"
